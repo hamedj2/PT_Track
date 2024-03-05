@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Physical Therapy Timer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="timer-container">
+      <div id="timer-display" class="timer-display">
+        <div class="time-text" id="time-remaining">00:00</div>
+      </div>
+      <input
+        type="number"
+        id="time-input"
+        placeholder="Set time in seconds"
+        min="1"
+        class="time-input"
+      />
+      <button id="timer-start" class="timer-button">Start</button>
+    </div>
+    <script type="module" src="js/timer.js"></script>
+  <script type="module" src="js/counter.js"></script>
+  <script type="module" src="js/main.js" defer></script>
+  </body>
+</html>
