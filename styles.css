@@ -63,10 +63,23 @@ body, html {
     transform: rotate(-90deg);
     position: absolute;
   }
-  
-  .timer-ring__circle {
-    stroke-dasharray: 629; /* Circumference of the circle (2 * Math.PI * r) */
-    stroke-dashoffset: 629; /* Initialize with full circumference */
-    transition: stroke-dashoffset 1s linear;
+
+  @keyframes flash {
+    0%, 100% { stroke: red; }
+    50% { stroke: transparent; }
   }
+
+  .timer-ring__circle {
+    transition: stroke-dashoffset 1s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke-dasharray: 730; /* Circumference of the circle */
+    stroke-dashoffset: 730; /* Full circumference to start */
+  }
+  
+  .timer-ring__circle.complete {
+    animation: flash 1s 2; /* Flashes twice */
+  }
+  
+ 
   
