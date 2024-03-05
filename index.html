@@ -8,7 +8,10 @@
   </head>
   <body>
     <div class="timer-container">
-      <div id="timer-display" class="timer-display">
+      <div class="timer-display">
+        <svg class="timer-ring" width="250" height="250">
+          <circle class="timer-ring__circle" stroke="orange" stroke-width="10" fill="transparent" r="100" cx="125" cy="125"/>
+        </svg>
         <div class="time-text" id="time-remaining">00:00</div>
       </div>
       <input
@@ -20,8 +23,8 @@
       />
       <button id="timer-start" class="timer-button">Start</button>
     </div>
-    <script type="module" src="js/timer.js"></script>
-  <script type="module" src="js/counter.js"></script>
+  
+  <script type="module" src="js/timer.js"></script>
   <script type="module" src="js/main.js" defer></script>
   </body>
 </html>

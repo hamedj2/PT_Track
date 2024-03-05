@@ -57,4 +57,16 @@ body, html {
   .timer-button:hover {
     background-color: #4cae4c;
   }
+
+
+  .timer-ring {
+    transform: rotate(-90deg);
+    position: absolute;
+  }
+  
+  .timer-ring__circle {
+    stroke-dasharray: 629; /* Circumference of the circle (2 * Math.PI * r) */
+    stroke-dashoffset: 629; /* Initialize with full circumference */
+    transition: stroke-dashoffset 1s linear;
+  }
   

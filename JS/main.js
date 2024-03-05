@@ -14,9 +14,20 @@ startButton.addEventListener('click', () => {
   }
 });
 
+// Define the SVG circle element and maximum stroke-dashoffset based on the circle's circumference
+const circle = document.querySelector('.timer-ring__circle');
+const maxOffset = circle.getTotalLength(); // Assuming the radius is 100, as set in the SVG attributes
+
+circle.style.strokeDasharray = maxOffset;
+circle.style.strokeDashoffset = maxOffset;
+
 // Update the timer display every second
 function updateDisplay() {
-  timerDisplay.textContent = formatTime(timer.getTime());
+  const time = timer.getTime();
+  const offset = (maxOffset / timer.startingSeconds) * time;
+  circle.style.strokeDashoffset = maxOffset - offset;
+  timerDisplay.textContent = formatTime(time);
+
   if (timer.isRunning) {
     setTimeout(updateDisplay, 1000);
   }

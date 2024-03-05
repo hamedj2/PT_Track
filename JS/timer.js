@@ -1,50 +1,54 @@
 // Timer logic
 class Timer {
-    constructor() {
+  constructor() {
       this.intervalId = null;
       this.remainingSeconds = 0;
       this.isRunning = false;
-    }
-  
-    // Initialize the timer with a specific duration in seconds
-    start(duration) {
+      this.startingSeconds = 0; // Track the initial time
+      this.onTick = null; // Callback for each tick
+      this.onComplete = null; // Callback for completion
+  }
+
+  start(duration) {
       if (this.isRunning) {
-        return;
+          return;
       }
-      
+
       this.remainingSeconds = duration;
+      this.startingSeconds = duration; // Set the starting time
       this.isRunning = true;
       this.intervalId = setInterval(() => {
-        this.remainingSeconds -= 1;
-        if (this.remainingSeconds <= 0) {
-          this.complete();
-        }
-        // Here we will later implement the callback to update the frontend
+          this.remainingSeconds -= 1;
+          if (this.remainingSeconds <= 0) {
+              this.complete();
+          }
+
+          if (this.onTick) {
+              this.onTick(); // Call the onTick callback each second
+          }
       }, 1000);
-    }
-  
-    // Stops the timer
-    stop() {
+  }
+
+  stop() {
       if (!this.isRunning) {
-        return;
+          return;
       }
-  
+
       clearInterval(this.intervalId);
       this.intervalId = null;
       this.isRunning = false;
-    }
-  
-    // Completes the timer countdown
-    complete() {
-      this.stop();
-      // Here we will later implement the callback for timer completion
-    }
-  
-    // Retrieves the current remaining time
-    getTime() {
-      return this.remainingSeconds;
-    }
   }
-  
-  export default Timer;
-  
+
+  complete() {
+      this.stop();
+      if (this.onComplete) {
+          this.onComplete(); // Call the onComplete callback
+      }
+  }
+
+  getTime() {
+      return this.remainingSeconds;
+  }
+}
+
+export default Timer;
