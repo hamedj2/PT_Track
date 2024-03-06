@@ -5,7 +5,7 @@ const timeInput = document.getElementById('time-input');
 const startButton = document.getElementById('timer-start');
 const timer = new Timer();
 const timerDisplay = document.querySelector('.timer-display');
-const audio = new Audio('path/to/your/audio/file.mp3'); // Add this line
+const audio = new Audio('alarm.mp3'); // Add this line
 
 // Start timer when start button is clicked
 startButton.addEventListener('click', () => {
