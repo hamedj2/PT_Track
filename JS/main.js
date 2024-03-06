@@ -51,3 +51,17 @@ timer.onComplete = () => {
   timerDisplay.classList.add('flash-border');
   setTimeout(() => timerDisplay.classList.remove('flash-border'), 3000); // Removes the class after flashing
 };
+
+// Dark mode toggle
+
+// Get the switch input and body elements
+const modeSwitchInput = document.getElementById('mode-switch');
+const body = document.body;
+
+// Add an event listener to the switch input
+modeSwitchInput.addEventListener('change', toggleDarkMode);
+
+// Function to toggle dark mode
+function toggleDarkMode() {
+  body.classList.toggle('dark-mode');
+}

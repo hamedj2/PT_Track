@@ -82,3 +82,84 @@ body, html {
   stroke-width: 20px;
   stroke-linecap: round;
 }
+
+
+
+
+/* Dark Mode */
+
+/* Switch button styles */
+.mode-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.mode-switch__input {
+  display: none;
+}
+
+.mode-switch__label {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mode-switch__label::before {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s;
+}
+
+.mode-switch__input:checked + .mode-switch__label {
+  background-color: #333;
+}
+
+.mode-switch__input:checked + .mode-switch__label::before {
+  transform: translateX(30px);
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode .timer-container {
+  background-color: #222;
+}
+
+.dark-mode .timer-display {
+  border-color: #444;
+  background: linear-gradient(to bottom, #444 0%,#222 100%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .time-text {
+  color: #ddd;
+}
+
+.dark-mode .time-input {
+  background-color: #444;
+  color: #fff;
+  border-color: #666;
+}
+
+.dark-mode .timer-button {
+  background-color: #555;
+}
+
+.dark-mode .timer-button:hover {
+  background-color: #777;
+}
