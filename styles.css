@@ -28,7 +28,7 @@ body, html {
 
 .time-text {
   font-size: 3em;
-  color: #333;
+  color: #7d93ba;
 }
 
 .time-input {
@@ -47,7 +47,7 @@ body, html {
   font-size: 1em;
   border: none;
   border-radius: 20px;
-  background-color: #5cb85c;
+  background-color: #68aec5;
   color: white;
   cursor: pointer;
   outline: none;
@@ -55,7 +55,7 @@ body, html {
 }
 
 .timer-button:hover {
-  background-color: #4cae4c;
+  background-color: #4c91ae;
 }
 
 .timer-ring {
@@ -78,7 +78,7 @@ body, html {
   transform-origin: 50% 50%;
   stroke-dasharray: 730;
   stroke-dashoffset: 730;
-  stroke: lightgrey;
-  stroke-width: 10px;
-  border-radius: 50%;
+  stroke: rgb(203, 215, 220);
+  stroke-width: 20px;
+  stroke-linecap: round;
 }
